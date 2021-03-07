@@ -8,7 +8,7 @@ using namespace std;
 int main() 
 {
     string line;
-    int numberOfSubstitutions = 15;
+    const int numberOfSubstitutions = 15;
     string triggers[numberOfSubstitutions]      = {"ro","rm","re","vi","va","th","l","mr","rou","or","are","don't","dont",".","."};
     string substitutions[numberOfSubstitutions] = {"wo","wm","we","wi","wa","f","w","mistew","wu","ow","awe","downt","downt"," uwu"," owo"};
     while (getline(cin, line)){
