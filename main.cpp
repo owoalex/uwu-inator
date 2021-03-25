@@ -5,26 +5,26 @@
 
 using namespace std;
 
+const int NUMBER_OF_SUBS = 17;
+
 int main() 
 {
     string line;
-    const int numberOfSubstitutions = 15;
-    string triggers[numberOfSubstitutions]      = {"ro","rm","re","vi","va","th","l","mr","rou","or","are","don't","dont",".","."};
-    string substitutions[numberOfSubstitutions] = {"wo","wm","we","wi","wa","f","w","mistew","wu","ow","awe","downt","downt"," uwu"," owo"};
+    const string triggers[NUMBER_OF_SUBS]      = {"ru","ro","the","rm","re","vi","va","th","l","mr","rou","or","are","don't","dont",".","."};
+    const string substitutions[NUMBER_OF_SUBS] = {"wu","wo","de","wm","we","wi","wa","f","w","mistew","wu","ow","awe","downt","downt"," uwu"," owo"};
     while (getline(cin, line)){
         string outln = line;
         bool stillWorking = true;
         int found = 0;
         while (stillWorking) {
             stillWorking = false;
-            for (int i=0;i<numberOfSubstitutions;i++) {
+            for (int i=0;i<NUMBER_OF_SUBS;i++) {
                 found = outln.find(triggers[i]); 
                 if (found != string::npos) {
                     outln = outln.replace(found,triggers[i].length(),substitutions[i]);
                     stillWorking = true;
                 }
             }
-            //outln = outln.replace(line.find("."),4," uwu");
         }
         cout << outln << endl;
     }
